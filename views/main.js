@@ -1,11 +1,11 @@
-var html = require('choo/html')
+var html = require("choo/html");
 
-var TITLE = '🚂🚋🚋'
+var TITLE = "🚂🚋🚋";
 
-module.exports = view
+module.exports = view;
 
-function view (state, emit) {
-  if (state.title !== TITLE) emit(state.events.DOMTITLECHANGE, TITLE)
+function view(state, emit) {
+  if (state.title !== TITLE) emit(state.events.DOMTITLECHANGE, TITLE);
 
   return html`
     <body class="sans-serif">
@@ -19,9 +19,9 @@ function view (state, emit) {
         <button class="f5 dim br-pill ph3 pv2 mb2 dib white bg-hot-pink bn pointer" onclick=${handleClick}>Click Me!</button>
       </div>
     </body>
-  `
+  `;
 
-  function handleClick () {
-    emit('clicks:add', 1)
+  function handleClick() {
+    emit("clicks:add", 1);
   }
 }
